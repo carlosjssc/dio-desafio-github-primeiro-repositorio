@@ -8,6 +8,7 @@ GUI = Interface gráfica
 CLI = Linhas de comando
 
 Comandos Windows GIT
+
 cd = (com .. retrocede um diretório e com / tbm) 
 dir = Listar (lista todas as pastas/diretorios existentes)
 mkdir = criar pastas dentro do diretório (ex. criar a pasta workspace) ex. c:\mkdir workspace
@@ -38,7 +39,7 @@ ed25519 = é um tipo de criptografia
 
 Para cadastrar a chave é preciso usar o git bash. Usar o comando abaixo:
 
-ssh-keygen -t ed25519 -c carlosjssc@hotmail.com
+ssh-keygen -t ed25519 -c e-mail
 
 Clicar em enter
 Criar uma senha simples, repete.
@@ -87,7 +88,7 @@ Criando um Repositório
 Para vê-la é preciso acrescentar ao comando ls -a (o -a significa todos)
 
 Criando os autores que aparecerão no commit:
-git config --global user.email “carlosjssc@hotmail.com”
+git config --global user.email “e-mail”
 git config --global user.name
 
 Add um arquivo
