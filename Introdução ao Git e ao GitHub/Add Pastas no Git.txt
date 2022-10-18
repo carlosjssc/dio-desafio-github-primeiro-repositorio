@@ -1,0 +1,16 @@
+Processo de criar uma pasta Local e colocá-la no GitHub remoto.
+
+1) Criar uma pasta dentro de um diretório já existente, ou seja, já inicializado com o comando $ git init (repositório .git oculto) utilizando o comando:
+$ mkdir Nome da Pasta
+
+2) Após criar a pasta realizar o comando $ git add . para a pasta ser reconhecida.
+
+3) Se ainda não estiver sido realizado a identificação do nome e e-mail será preciso realizar com os comandos: 
+$  git config --global user.email "you@example.com"
+$  git config --global user.name "Your Name"
+
+4) Realizar o comando $ git commit -m “Escrever aqui detalhadamente do que se trata a pasta”
+
+5) Fazer o push com o comando $ git push origin main
+Obs. Se algum arquivo ou pasta foi atualizado remotamente no github será preciso fazer o pull antes de realizar o push, com o comando: $ git pull
+
