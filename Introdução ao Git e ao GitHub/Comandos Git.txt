@@ -82,7 +82,7 @@ comando: $ git push origin main
 
 * git clone * = faz um clone do repositório remoto em seu repositório local.
 
-comando: $ git clone
+comando: $ git clone https://....
 
 
 Comando: $ git status

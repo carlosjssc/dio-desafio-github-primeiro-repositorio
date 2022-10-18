@@ -1,0 +1,8 @@
+O comando git clone faz um clone do repositório remoto em seu repositório local.
+
+Para isto basta realizar:
+
+1) Copiar o https ou a SSH no github pela opção Code.
+2) Exexutar o comando:
+
+$ git clone https://.....
