@@ -1,11 +1,10 @@
-GitHub
+GitHub and Git
 
-Git
-
-https://git-scm.com/download/win
+URL para download do install windows 64bits: https://git-scm.com/download/win
 
 GUI = Interface gráfica
 CLI = Linhas de comando
+GIT = sistema de versionamento de código distribuído
 
 Comandos Windows GIT
 
@@ -17,89 +16,85 @@ rmdir = deleta um diretório/pasta por completo ex. c:\rmdir workspace /S /Q
 cls = Limpar a tela no cmd
 ls = lista o conteúdo de uma pasta
 echo = escreve um texto e cria na pasta usada um dado arquivo. ex: c:\workspace>echo hello world > hello.txt 
-A tecla TAB auxilia na complementação de palavras dentro do CMD
+mv = comando de mover. Exemplo: mv “arquivo.md” ./”repositório”
+
+A tecla TAB auxilia na complementação de palavras dentro do CMD e a seta para cima retorna palavras já utilizadas.
+
 O silêncio ou nada retornado significa que foi executado o que foi solicitado.
 
-GIT = sistema de versionamento de código distribuído
+sha1 = algoritmo de encriptação. (encriptação de caracteres de 40 dígitos). Toda vez que eu fizer uma alteração no arquivo será gerado um novo conjunto de caracteres de segurança do arquivo.
+Comando: 
+openssl sha1 
 
-sha1 = algoritmo de encriptação. (encriptação de caracteres de 40 dígitos). Toda vez que eu fizer uma alteração no arquivo será gerado um novo conjunto de caracteres de segurança do arquivo. Comando: openssl sha1 
-
-echo ‘teste’’ | git hash-object - -
+echo "teste’’ | git hash-object - -
 
 Blob = tipo, tamanho, \0 e conteúdo (guarda apenas o sha1 do arquivo)
 
-Tree  = tamanho do arquivo, \0 blob apontam para as blob e está sempre relacionada a ela. Aponta também para outras Tree.
+Tree = tamanho do arquivo, \0 blob apontam para as blob e está sempre relacionada a ela. Aponta também para outras Tree.
 
 Commits = objeto que irá juntar tudo. Aponta para uma Tree, um parente, um autor, uma mensagem e um timestamp (também possui uma hash sha1)
 
-Uma vez que altera um arquivo se altera toda estrutura dentro dele. Por isso é um sistema distribuído seguro.
+Uma vez que se altera um arquivo, se altera toda estrutura dentro dele. Por isso é um sistema distribuído seguro.
 
 Chave SSH = forma de estabelecer uma conexão segura entre um terminal
+
 ed25519 = é um tipo de criptografia
 
-Para cadastrar a chave é preciso usar o git bash. Usar o comando abaixo:
+Para cadastrar a chave é preciso usar o git bash e a sequencia abaixo: 
 
+Comando: 
 ssh-keygen -t ed25519 -c e-mail
-
 Clicar em enter
 Criar uma senha simples, repete.
 
-comandos:
-ls = lista os arquivos
 cat ide_ed25519.pub (mostra a chave pública criada. O número vai ser diferente) Será usada no GitHub. É só copiar e colar no Github para a parte de settings chave SSH.
 
+Comando: 
 eval $(ssh-agent -s)
 ls
 ssh-add id_ed25519 (colocar a chave privada)
 
-git clone (e adiciona o caminho copiado do github)
 
-Token de acesso pessoal
+# Comandos básicos do Git #
 
 
-Primeiros comandos com Git
+* git init * = cria uma pasta .git (repositório) dentro de um diretório (iniciar sempre dentro da pasta que receberá os arquivos que serão criados)
 
-git init = cria uma pasta .git (repositório) dentro de um diretório (iniciar sempre dentro da pasta que receberá os arquivos que serão criados)
+comando: $ git init
 
-git add
 
-O comando adiciona pastas acrescentadas via Git local e que poderão ser push no GitHub. Para o Git local reconhecer a pasta é preciso dar o comando abaixo
+* git add * = o comando adiciona pastas/arquivos acrescentadas via Git local e que poderão ser push no GitHub. Para o Git local reconhecer a pasta é preciso dar o comando abaixo
 
-$ git add .
-ou
-$ git add -a
+comando: $ git add .    ou   $ git add -a
 
 O ponto (.) representa que uma pasta será reconhecida e o (-a)  indica que todas as pastas criadas serão reconhecidas.
 
-git commit
 
-No comando git commit -m o (-m) significa inclusão de algum texto e o texto que for escrito entre “ ” será o texto que quero incluir.
+* git commit * = no referido comoand o (-m) significa inclusão de algum texto e o texto que for escrito entre “ ” será o texto que quero incluir.
 
-$ git commit -m “Inclusão do arquivo Notas Importantes”
+comando: $ git commit -m “Inclusão do arquivo Notas Importantes”
 
-git push 
 
-Para o arquivo acrescentado localmente ir para o GitHub será necessário fazer um push com o comando:
+* git push * = faz o arquivo acrescentado localmente ir para o GitHub.
 
-$ git push origin main
+comando: $ git push origin main
 
-Criando um Repositório
-.git é uma pasta oculta
-Para vê-la é preciso acrescentar ao comando ls -a (o -a significa todos)
+
+* git clone * = faz um clone do repositório remoto em seu repositório local.
+
+comando: $ git clone
+
+
+Comando: $ git status
+
 
 Criando os autores que aparecerão no commit:
-git config --global user.email “e-mail”
-git config --global user.name
+$ git config --global user.email “e-mail”
+$ git config --global user.name
 
-Add um arquivo
-git add *
-git commit -m “commit inicial” (ou outro nome com a mensagem que desejo passar)
-
-git clone = faz um clone do repositório remoto em seu repositório local.
+.git é uma pasta oculta. Para vê-la é preciso acrescentar ao comando ls -a (o -a significa todos)
 
 Tipo de arquivo Markdown .md que usa caracteres para formatar texto
-
-Comando: git status
 
 Quando o código é empurrado para o github e o commit não representa o estado mais atual do repositório, o git irá pedir para fazer um pull e depois um push.
 
@@ -107,7 +102,5 @@ Quando colocamos um name e email diferente no git e enviamos para o github, nele
 
 untracked = arquivos que o git ainda não sabe que existem.
 unmodified = arquivo que está dentro do repositório do git e que ainda não foi modificado 
-modified = 
+modified = arquivo já modificado
 staged = arquivos que estão se preparando para um outro processo de  agrupamento, ou seja, se preparando para fazer parte de um commit.
-
-comando de mover: mv “arquivo.md” ./”repositório”
